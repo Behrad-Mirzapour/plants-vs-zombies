@@ -199,50 +199,51 @@ int chompSoundIdx = 0;
 // -------------------------------------------------------------------------
 
 int main() {
+    
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Plants vs Zombies Clone - Raylib C");
     SetTargetFPS(60);
 
     // Load Fonts
-    markerTtf = LoadFontEx("../Resources/PermanentMarker.ttf", 32, 0, 250);
+    markerTtf = LoadFontEx("Resources/PermanentMarker.ttf", 32, 0, 250);
 
     // Load Textures
-    peaTexture = LoadTexture("../Resources/Pea.png");
-    sunTexture = LoadTexture("../Resources/Sun.png");
-    mowerTexture = LoadTexture("../Resources/Mower.png");
-    frontyardTexture = LoadTexture("../Resources/Frontyard.png");
-    frontyardnightTexture = LoadTexture("../Resources/FrontyardNight.png");
-    SEEDsunflowerTexture = LoadTexture("../Resources/SeedSunflower.png");
-    SEEDpeashooterTexture = LoadTexture("../Resources/SeedPeashooter.png");
-    SEEDchomperTexture = LoadTexture("../Resources/SeedChomper.png");
-    SEEDroseTexture = LoadTexture("../Resources/SeedRose.png");
-    SEEDpotatoTexture = LoadTexture("../Resources/SeedPotato.png");
-    dashboardTexture = LoadTexture("../Resources/Dashboard.png");
-    packetframeTexture = LoadTexture("../Resources/PacketFrame.png");
-    lockTexture = LoadTexture("../Resources/Lock.png");
-    levelselectionTexture = LoadTexture("../Resources/Levelselection.png");
-    pausescreenTexture = LoadTexture("../Resources/Pausescreen.png");
-    mainmenu1Texture = LoadTexture("../Resources/Mainmenu1.png");
-    mainmenu2Texture = LoadTexture("../Resources/Mainmenu2.png");
-    mainmenu3Texture = LoadTexture("../Resources/Mainmenu3.png");
-    shopscreenTexture = LoadTexture("../Resources/Shopscreen.png");
-    coinbagTexture = LoadTexture("../Resources/Coinbag.png");
-    soldoutTexture = LoadTexture("../Resources/Soldout.png");
-    coinboardTexture = LoadTexture("../Resources/Coinboard.png");
-    statboardTexture = LoadTexture("../Resources/Statboard.png");
+    peaTexture = LoadTexture("Resources/Pea.png");
+    sunTexture = LoadTexture("Resources/Sun.png");
+    mowerTexture = LoadTexture("Resources/Mower.png");
+    frontyardTexture = LoadTexture("Resources/Frontyard.png");
+    frontyardnightTexture = LoadTexture("Resources/FrontyardNight.png");
+    SEEDsunflowerTexture = LoadTexture("Resources/SeedSunflower.png");
+    SEEDpeashooterTexture = LoadTexture("Resources/SeedPeashooter.png");
+    SEEDchomperTexture = LoadTexture("Resources/SeedChomper.png");
+    SEEDroseTexture = LoadTexture("Resources/SeedRose.png");
+    SEEDpotatoTexture = LoadTexture("Resources/SeedPotato.png");
+    dashboardTexture = LoadTexture("Resources/Dashboard.png");
+    packetframeTexture = LoadTexture("Resources/PacketFrame.png");
+    lockTexture = LoadTexture("Resources/Lock.png");
+    levelselectionTexture = LoadTexture("Resources/Levelselection.png");
+    pausescreenTexture = LoadTexture("Resources/Pausescreen.png");
+    mainmenu1Texture = LoadTexture("Resources/Mainmenu1.png");
+    mainmenu2Texture = LoadTexture("Resources/Mainmenu2.png");
+    mainmenu3Texture = LoadTexture("Resources/Mainmenu3.png");
+    shopscreenTexture = LoadTexture("Resources/Shopscreen.png");
+    coinbagTexture = LoadTexture("Resources/Coinbag.png");
+    soldoutTexture = LoadTexture("Resources/Soldout.png");
+    coinboardTexture = LoadTexture("Resources/Coinboard.png");
+    statboardTexture = LoadTexture("Resources/Statboard.png");
 
 
     // Load animated GIF frames for all plant types
     
-    LOAD_GIF(sunflower, "../Resources/Sunflower.gif");
-    LOAD_GIF(peashooter, "../Resources/Peashooter.gif");
-    LOAD_GIF(chomper, "../Resources/Chomper.gif");
-    LOAD_GIF(rose, "../Resources/Rose.gif");
-    LOAD_GIF(potato, "../Resources/Potato.gif");
-    LOAD_GIF(normalz, "../Resources/Normalz.gif");
-    LOAD_GIF(thinkerz, "../Resources/Thinkerz.gif");
-    LOAD_GIF(EATnormalz, "../Resources/EATNormalz.gif");
-    LOAD_GIF(EATthinkerz, "../Resources/EATThinkerz.gif");
-    LOAD_GIF(explosion, "../Resources/explosion.gif");
+    LOAD_GIF(sunflower, "Resources/Sunflower.gif");
+    LOAD_GIF(peashooter, "Resources/Peashooter.gif");
+    LOAD_GIF(chomper, "Resources/Chomper.gif");
+    LOAD_GIF(rose, "Resources/Rose.gif");
+    LOAD_GIF(potato, "Resources/Potato.gif");
+    LOAD_GIF(normalz, "Resources/Normalz.gif");
+    LOAD_GIF(thinkerz, "Resources/Thinkerz.gif");
+    LOAD_GIF(EATnormalz, "Resources/EATNormalz.gif");
+    LOAD_GIF(EATthinkerz, "Resources/EATThinkerz.gif");
+    LOAD_GIF(explosion, "Resources/explosion.gif");
 
     InitAudioDevice(); // Initialize audio system
 
@@ -252,45 +253,45 @@ int main() {
     LoadLevel4HighScore();
 
     // --- LOAD SOUNDS & MUSIC ---
-    sunSound = LoadSound("../Resources/sound&music/points.mp3");
-    pauseSound = LoadSound("../Resources/sound&music/pause.mp3");
-    plantsound = LoadSound("../Resources/sound&music/plant.mp3");
-    buzzerSound = LoadSound("../Resources/sound&music/buzzer.mp3");
-    loseSound = LoadSound("../Resources/sound&music/losemusic.mp3");
-    winSound = LoadSound("../Resources/sound&music/winmusic.mp3");
-    seedliftSound = LoadSound("../Resources/sound&music/seedlift.mp3");
-    throwSound = LoadSound("../Resources/sound&music/throw.mp3");
-    tapSound = LoadSound("../Resources/sound&music/tap.mp3");
-    gravebuttonSound = LoadSound("../Resources/sound&music/gravebutton.mp3");
-    coinSound = LoadSound("../Resources/sound&music/coin.mp3");
-    groanSounds[0] = LoadSound("../Resources/sound&music/groan.mp3");
-    groanSounds[1] = LoadSound("../Resources/sound&music/groan2.mp3");
-    groanSounds[2] = LoadSound("../Resources/sound&music/groan3.mp3");
-    groanSounds[3] = LoadSound("../Resources/sound&music/groan4.mp3");
-    groanSounds[4] = LoadSound("../Resources/sound&music/groan5.mp3");
-    groanSounds[5] = LoadSound("../Resources/sound&music/groan6.mp3");
+    sunSound = LoadSound("Resources/sound&music/points.mp3");
+    pauseSound = LoadSound("Resources/sound&music/pause.mp3");
+    plantsound = LoadSound("Resources/sound&music/plant.mp3");
+    buzzerSound = LoadSound("Resources/sound&music/buzzer.mp3");
+    loseSound = LoadSound("Resources/sound&music/losemusic.mp3");
+    winSound = LoadSound("Resources/sound&music/winmusic.mp3");
+    seedliftSound = LoadSound("Resources/sound&music/seedlift.mp3");
+    throwSound = LoadSound("Resources/sound&music/throw.mp3");
+    tapSound = LoadSound("Resources/sound&music/tap.mp3");
+    gravebuttonSound = LoadSound("Resources/sound&music/gravebutton.mp3");
+    coinSound = LoadSound("Resources/sound&music/coin.mp3");
+    groanSounds[0] = LoadSound("Resources/sound&music/groan.mp3");
+    groanSounds[1] = LoadSound("Resources/sound&music/groan2.mp3");
+    groanSounds[2] = LoadSound("Resources/sound&music/groan3.mp3");
+    groanSounds[3] = LoadSound("Resources/sound&music/groan4.mp3");
+    groanSounds[4] = LoadSound("Resources/sound&music/groan5.mp3");
+    groanSounds[5] = LoadSound("Resources/sound&music/groan6.mp3");
 
     // Load Aliases for concurrent SFX
-    Sound baseExplosion = LoadSound("../Resources/sound&music/potato-mine.mp3");
+    Sound baseExplosion = LoadSound("Resources/sound&music/potato-mine.mp3");
     for (int i=0; i<MAX_SFX_INSTANCES; i++) explosionSounds[i] = LoadSoundAlias(baseExplosion);
 
-    Sound baseSplat = LoadSound("../Resources/sound&music/splat2.mp3");
+    Sound baseSplat = LoadSound("Resources/sound&music/splat2.mp3");
     for (int i=0; i<MAX_SFX_INSTANCES; i++) splatSounds[i] = LoadSoundAlias(baseSplat);
 
-    Sound baseMower = LoadSound("../Resources/sound&music/lawnmower.mp3");
+    Sound baseMower = LoadSound("Resources/sound&music/lawnmower.mp3");
     for (int i=0; i<5; i++) mowerSounds[i] = LoadSoundAlias(baseMower);
 
-    Sound baseFrozen = LoadSound("../Resources/sound&music/frozen.mp3");
+    Sound baseFrozen = LoadSound("Resources/sound&music/frozen.mp3");
     for (int i=0; i<5; i++) frozenSounds[i] = LoadSoundAlias(baseFrozen);
 
-    Sound baseChime = LoadSound("../Resources/sound&music/chime.mp3");
+    Sound baseChime = LoadSound("Resources/sound&music/chime.mp3");
     for (int i=0; i<5; i++) chimeSounds[i] = LoadSoundAlias(baseChime);
 
-    Sound baseChomp = LoadSound("../Resources/sound&music/chomp.mp3");
+    Sound baseChomp = LoadSound("Resources/sound&music/chomp.mp3");
     for (int i=0; i<MAX_SFX_INSTANCES; i++) chompSounds[i] = LoadSoundAlias(baseChomp);
 
     // Initial Music Load
-    bgMusic = LoadMusicStream("../Resources/sound&music/Plants vs. Zombies - Choose Your Seeds.mp3");
+    bgMusic = LoadMusicStream("Resources/sound&music/Plants vs. Zombies - Choose Your Seeds.mp3");
     PlayMusicStream(bgMusic);
 
     int menuSelection = 0; // 0: Play, 1: Shop, 2: Exit
@@ -541,5 +542,6 @@ int main() {
     CloseAudioDevice();
 
     CloseWindow();
+    
     return 0;
 }
